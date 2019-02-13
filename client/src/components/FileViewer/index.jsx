@@ -2,7 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown/with-html';
 import { serving } from '@config/siteConfig.json';
 
-const { markdownSettings: { escapeHtmlMain, skipHtmlMain, disallowedTypesMain } } = serving;
+const { markdownSettings: { escapeHtmlMain, skipHtmlMain, allowedTypesMain } } = serving;
 class FileViewer extends React.Component {
 
   constructor (props) {
@@ -40,7 +40,7 @@ class FileViewer extends React.Component {
       <div className={'markdown'}>
         {
           this.state.fileLoaded &&
-          <ReactMarkdown className={'markdown-preview'} source={this.state.fileText} skipHtml={skipHtmlMain} disallowedTypes={disallowedTypesMain} escapeHtml={escapeHtmlMain} />
+          <ReactMarkdown className={'markdown-preview'} source={this.state.fileText} skipHtml={skipHtmlMain} allowedTypes={allowedTypesMain} escapeHtml={escapeHtmlMain} />
         }
         {
           !this.state.fileLoaded &&

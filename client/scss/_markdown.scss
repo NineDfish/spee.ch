@@ -1,22 +1,19 @@
 .markdown-preview {
-  // Headers
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    padding-top: $secondary-padding;
-    padding-top: $secondary-padding;
-  }
+
+  margin: $tertiary-padding 0px;
 
   h1,
   h2,
   h3 {
     font-size: inherit;
     font-weight: inherit;
-    margin-bottom: $tertiary-padding;
-    padding-top: $tertiary-padding;
+    margin: $tertiary-padding 0px;
+  }
+
+  h4, h5, h6 {
+    font-size: $text-large;
+    font-weight: 600;
+    margin: $tertiary-padding 0px;
   }
 
   h4, h5, h6 {
@@ -27,8 +24,8 @@
   // Paragraphs
   p {
     font-size: 1.15rem;
-    padding-bottom: $tertiary-padding;
     white-space: pre-line;
+    margin: $tertiary-padding 0px;
 
     svg {
       width: 1rem;
@@ -44,8 +41,17 @@
     background: $blockquote-background;
     padding: $tertiary-padding;
     min-width: 60%;
-    margin: 0;
-    margin-bottom: $tertiary-padding;
+    margin: $tertiary-padding;
+    p:first-child{
+      margin-top: 0px;
+    }
+    p:last-child {
+      margin-bottom: 0px;
+    }
+
+    div {
+      display: none;
+    }
   }
 
   // Strikethrough text
@@ -55,10 +61,10 @@
   // Tables
   table {
     width: 100%;
-    margin-bottom: 1.2rem;
     background-color: $base-color;
     border-spacing: 0;
     border: .5px solid $chrome-color;
+    margin: $tertiary-padding 0px;
 
     tr {
       td,
@@ -90,8 +96,20 @@
     margin-top: $tertiary-padding;
     padding: $secondary-padding;
     object-fit: scale-down;
-    max-width: 100%;
     box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+  }
+
+  iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+    margin-top: $tertiary-padding 0px;
+    margin-bottom: $tertiary-padding 0px;
   }
 
   iframe {
@@ -130,7 +148,7 @@
 
   a {
     color: $primary-color;
-    display: inline-block;
+    display: inline;
   }
 
   // Lists

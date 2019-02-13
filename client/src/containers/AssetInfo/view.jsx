@@ -13,7 +13,7 @@ import ReactMarkdown from 'react-markdown';
 
 const { details: { host } } = siteConfig;
 const { serving } = siteConfig;
-const { markdownSettings: { escapeHtmlDescriptions, skipHtmlDescriptions, disallowedTypesDescriptions } } = serving;
+const { markdownSettings: { escapeHtmlDescriptions, skipHtmlDescriptions, allowedTypesDescriptions } } = serving;
 class AssetInfo extends React.Component {
   render () {
     const { editable, asset } = this.props;
@@ -45,7 +45,7 @@ class AssetInfo extends React.Component {
                   className={'markdown-preview'}
                   escapeHtml={escapeHtmlDescriptions}
                   skipHtml={skipHtmlDescriptions}
-                  disallowedTypes={disallowedTypesDescriptions}
+                  allowedTypes={allowedTypesDescriptions}
                   source={description}
                 />
               </div>
